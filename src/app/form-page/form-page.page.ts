@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form-page',
@@ -8,9 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FormPagePage implements OnInit {
   constructor() {}
 
-  @Input() email: any;
-  @Input() edad: any;
-  @Input() fechaNacimiento: any;
+  @Input() email!: string;
+  @Input() edad!: number;
+  @Input() fechaNacimiento!: Date;
+  @ViewChild('formvalid') myForm!: NgForm;
 
+  Imprimir() {
+    console.log('edad = ' + this.edad);
+  }
   ngOnInit() {}
 }

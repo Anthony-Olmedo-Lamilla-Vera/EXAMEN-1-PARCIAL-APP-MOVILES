@@ -27,19 +27,23 @@
           <ion-label position="stacked">Email</ion-label>
           <ion-input
             required="true"
+            name="email"
             [(ngModel)]="email"
             [ngModel]="email"
             type="Email"
             placeholder="email"
+            [ngModelOptions]="{standalone: true}"
           ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Edad</ion-label>
           <ion-input
+            name="edad"
             required="true"
             [(ngModel)]="edad"
             type="number"
             placeholder="099999999999"
+            [ngModelOptions]="{standalone: true}"
             required
           ></ion-input>
         </ion-item>
@@ -48,13 +52,16 @@
           <ion-input
             [(ngModel)]="fechaNacimiento"
             type="date"
+            name="fechaNacimiento"
             required="true"
+            [ngModelOptions]="{standalone: true}"
           ></ion-input>
         </ion-item>
         <ion-button expand="full">
-          <ion-input type="submit"> REGISTRAR</ion-input>
+          <ion-input (click)="Imprimir()" type="submit"> Registrar </ion-input>
         </ion-button>
       </form>
     </ion-list>
+    {{edad}}
   </ion-content>
 </div>
